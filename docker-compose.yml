@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  zot:
+    image: ghcr.io/project-zot/zot:latest
+    container_name: zot
+#    ports:
+#      - "5000:5000"
+    restart: unless-stopped
+  nginx:
+    image: nginx:alpine
+    container_name: zot-nginx
+    depends_on:
+      - zot
+    ports:
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+    restart: unless-stopped
