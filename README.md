@@ -12,7 +12,8 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 sudo certbot certonly --standalone
 ```
-3. Install Docker and Docker-Compose
+4. Copy the certificates in a new directory called certs
+3. Install Docker and Docker-Compose (This reference to the certs directory)
 4. Run the compose file
 ```
 docker-compose up -d
