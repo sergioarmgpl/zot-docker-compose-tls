@@ -8,6 +8,11 @@
     "tls": {
       "cert": "/etc/zot/certs/fullchain.pem",
       "key": "/etc/zot/certs/privkey.pem"
+    },
+    "auth": {
+      "htpasswd": {
+        "path": "/etc/zot/htpasswd"
+      }
     }
   },
   "log": {
